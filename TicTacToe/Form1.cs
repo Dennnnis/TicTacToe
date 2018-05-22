@@ -29,11 +29,9 @@ namespace TicTacToe
         }
 
         int[,] grid = new int[3,3];
-
         int move = 0;
 
         Player turn;
-
         Player Player1 = new Player('○',1, System.Drawing.Color.Red  , Properties.Resources.o);
         Player Player2 = new Player('×',2, System.Drawing.Color.Blue , Properties.Resources.x);
 
@@ -54,7 +52,7 @@ namespace TicTacToe
             UpdateAll();
         }
 
-        //#=================#  Logic  #=================# 
+        //Logic
 
         public void Reset()
         {
@@ -76,7 +74,6 @@ namespace TicTacToe
             button7.BackgroundImage = base.BackgroundImage;
             button8.BackgroundImage = base.BackgroundImage;
             button9.BackgroundImage = base.BackgroundImage;
-
         }
             
         public void SwapTurn()
@@ -135,7 +132,7 @@ namespace TicTacToe
             gid = Check3(grid[2, 0], grid[2, 1], grid[2, 2]);
             if (gid != 0) { return gid; }
 
-            //SCHEEF
+            //Diagonal 
             gid = Check3(grid[0, 0], grid[1, 1], grid[2, 2]);
             if (gid != 0) { return gid; }
 
@@ -211,7 +208,7 @@ namespace TicTacToe
             button11.BackColor = turn.Color;
         }
 
-        //#=================# Buttons #=================# 
+        //Buttons
 
         //Restart
         private void button10_Click(object sender, EventArgs e)
